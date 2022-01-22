@@ -19,7 +19,7 @@
 		<div class="musicBox">
 			<div class="c_title">√÷Ω≈¿Ωæ«</div>
 			<div class="slideBox">
-				<div class="music_item">
+				<%-- <div class="music_item">
 					<img src="${path}/static/img/MusicCover1@2x.png"/>
 					<div class="musicInfo">
 						<div class="m_title">1234</div>
@@ -53,7 +53,7 @@
 						<div class="name">1234</div>
 						<img src="${path}/static/img/ic_play_white@2x.png" class="playBtn" />
 					</div>	
-				</div>
+				</div> --%>
 				
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 					</div>
 				</div>
 				<div class="chartList">
-					<div class="listItem">
+					<%-- <div class="listItem">
 						<div class="rank">1</div>
 						<div class="musicTitle">123123123</div>
 						<div class="singer">asdf</div>
@@ -138,7 +138,7 @@
 						<div class="musicTitle">123123123</div>
 						<div class="singer">asdf</div>
 						<img src="${path }/static/img/ic_play_green@2x.png" class="playBtn"/>
-					</div>
+					</div> --%>
 				</div>
 			</div>
 			<!-- ¿Œ±‚æŸπ¸  -->
@@ -151,7 +151,7 @@
 					</div>
 				</div>
 				<div class="chartlist">
-					<div class="listItem">
+					<%-- <div class="listItem">
 						<div class="albumImg">
 							<img src="${path }/static/img/MusicCover1@2x.png"/>
 						</div>
@@ -180,7 +180,7 @@
 							<div class="singer">asdf</div>
 							<img src="${path }/static/img/ic_play_green@2x.png" class="playBtn"/>
 						</div>
-					</div>
+					</div> --%>
 				</div>
 			</div>
 		</div>
@@ -248,9 +248,13 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="${path }/static/js/musictree.js"></script>
 	
 	<script>
 		$(document).ready(function(){
+			
+			getlist();
+			
 			$(".slideBox").slick({
 				variableWidth:true,
 				dots:true,
@@ -270,6 +274,9 @@
 				}
 				
 			})
+			
+			getTrack();
+			getAlbum("3");
 		})
 		
 	</script>

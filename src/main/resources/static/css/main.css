@@ -50,7 +50,8 @@ body{
 	display:block;
 	margin:24px auto 33px;
 	width:174px;
-	height:41px;	
+	height:41px;
+	cursor:pointer;	
 }
 .Top .searchBox{
 	float:right;
@@ -97,8 +98,14 @@ body{
 	cursor:pointer;
 	text-align:center;
 }
+.menu > ul > li:active{
+	border-bottom: 3px solid #29602b;
+}
 .menu > ul > li:hover{
 	border-bottom: 3px solid #29602b;
+}
+.menu > ul > li:hover >ul{
+	display: block;
 }
 .menu > ul > li span{
 	color: #29602b;
@@ -190,6 +197,7 @@ body{
 }
 .content .musicBox{
 	margin-top:55px;
+	cursor:pointer;
 }
 .content .c_title{
 	font-size:24px;
@@ -264,12 +272,12 @@ body{
 	height: 62px;
 	top: calc(50% - 31px);
 }
-.slick-next, .slick-next:hover, .slick-next:focus{
-	background-image: url('../../static/img/btn_right.png');
+.slick-next{
+	background-image: url('../../static/img/btn_right.png') !important;
 	right: -80px;
 }
-.slick-prev, .slick-prev:hover, .slick-prev:focus{
-	background-image: url('../../static/img/btn_left.png');
+.slick-prev{
+	background-image: url('../../static/img/btn_left.png') !important;
 	left: -80px;
 }
 .content .banner{
@@ -451,3 +459,155 @@ body{
 	line-height:1.5;
 }
 
+
+
+
+
+
+/*musicChart CSS*/
+.Mcontent{
+	width: 1280px;
+	margin: 0 auto;
+	padding: 40px 0 150px;
+}
+
+.Mcontent .title{
+	font-size:24px;
+	color: #111;
+	line-height: 0.9;
+	font-weight: bold;	
+}
+
+.Mcontent .date{
+	text-align:center;
+	font-size:20px;
+}
+.Mcontent .date span{
+	color:#29602b;
+	font-size:20px;
+	font-weight:bold;
+}
+.Mcontent .btns{
+	text-align:right;
+	margin-top:10px;
+}
+.Mcontent .btns img{
+	height:30px;
+	cursor:pointer;
+}
+.Mcontent .musicChart {
+	margin-top : 20px;
+}
+.Mcontent  .musicChart .chartTop{
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 15px 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 15fr 1fr 1fr;
+}
+.Mcontent .musicChart .chartTop div{
+	font-size:16px;
+	text-align: center;
+	color: #000;
+}
+.Mcontent .musicChart .chartList {
+	display:table; 
+	table-layout:fixed;
+	width:100%;
+}
+.Mcontent .musicChart .chartList .listItem{
+	padding: 10px 0;
+	display: table-row;
+	height:80px;
+}
+.Mcontent .musicChart .chartList .listItem div{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	width:67px;
+	border-bottom:1px solid #eee;
+}
+
+.Mcontent .musicChart .chartList .listItem .rank{
+	font-size:20px;
+	font-weight:bold;
+}
+.Mcontent .musicChart .chartList .listItem .musicCover{
+	width:60px;
+	height:60px
+}
+.Mcontent .musicChart .chartList .listItem .title{
+	font-size:16px;
+	width:350px;
+	text-align:left;
+	white-space: nowrap;
+ 	overflow: hidden;
+  	text-overflow: ellipsis;
+	padding-right:10px;
+}
+.Mcontent .musicChart .chartList .listItem .singer{
+	font-size:16px;
+	color: #929292;
+	width: 500px;
+	text-align:left;
+}
+.Mcontent .musicChart .chartList .listItem .playBtn, .Mcontent .musicChart .chartList .listItem .addBtn{
+	width:20px;
+	height:20px;
+	cursor:pointer;
+}
+.Mcontent .loading{
+	display:block;
+	width:150px;
+	height:150px;
+	margin:50px auto;
+}
+
+.Mcontent .position{
+	color: #838383;
+	font-size: 14px;
+	margin-bottom: 50px;
+}
+
+
+
+.Mcontent .albumChart{
+	margin-top: 100px;
+}
+.Mcontent .albumChart .chartlist .listItem{
+	width:545px;
+	height:160px;
+	border:1px solid #eee;
+	display:inline-block;
+	margin: 0 70px 20px 0;
+}
+.Mcontent .albumChart .chartlist .listItem:nth-child(2n -1){
+	margin-right:0;
+}
+.Mcontent .albumChart .chartlist .listItem .albumImg{
+	width:160px;
+	height:160px;
+	float:left;
+	margin-right:21px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumImg img{
+	width:160px;
+	height:160px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo{
+	float:left;
+	padding-top:22px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo .musicTitle{
+	font-size:16px;
+	margin-bottom:16px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo .singer{
+	font-size:16px;
+	color:#929292;
+	margin-bottom:30px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo .playBtn{
+	font-size:20px;
+	margin-bottom:20px;
+}

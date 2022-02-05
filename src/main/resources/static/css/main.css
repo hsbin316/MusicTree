@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+html, body {
+	font-family: 'NanumSquare';
+}
+*{
+	box-sizing: border-box;
+}
+
 input:focus{
 	outline:none;
 }
@@ -11,18 +21,20 @@ body{
 	width:100%;
 	margin:0 auto;
 }
+
+/* Top css */
 .topMenu{
 	width:1280px;
 	text-align:right;
 	margin:24px auto;
 }
 .topMenu div{
+	font-family: 'Noto Sans KR';
 	display:inline-block;
 	font-size:14px;
 	font-weight:500;
 	color:#191919;
 	line-height:1.43;
-	border-right:solid 1px #191919;
 	padding-right:10px;
 	cursor:pointer;
 }
@@ -38,7 +50,8 @@ body{
 	display:block;
 	margin:24px auto 33px;
 	width:174px;
-	height:41px;	
+	height:41px;
+	cursor:pointer;	
 }
 .Top .searchBox{
 	float:right;
@@ -48,15 +61,17 @@ body{
 	border: 1px solid #ddd;
 	background-color:rgba(238,238,238,0.3);
 	margin-top:-70px;
+	position: relative
 }
 .Top .searchBox input{
 	background-color:transparent;
 	border: none;
-	padding-left:10px;
+	padding-left:10px 0 0 10px;
 	padding-top:5px;
 	height:30px;
 	width:170px;
 	font-size:16px;
+	outline:none;
 }
 .Top .searchBox img{
 	width:20px;
@@ -66,29 +81,125 @@ body{
 .menu{
 	width:1280px;
 	margin: 0 auto;
+	position:relative;
 }
-.menu ul{
+.menu > ul{
 	display:flex;
 	justify-content:space-evenly;
+	margin:0;
+	padding:0;
 }
-.menu ul li{
+.menu > ul > li{
 	display: inline-block;
+	width:161px;
+	height:70px;
+	padding-top:25px;
 	font-size:20px;
 	font-weight:bold;
 	color:#111;
 	cursor:pointer;
+	text-align:center;
 }
-.menu ul span{
+.menu > ul > li:active{
+	border-bottom: 3px solid #29602b;
+}
+.menu > ul > li:hover{
+	border-bottom: 3px solid #29602b;
+}
+.menu > ul > li:hover >ul{
+	display: block;
+}
+.menu > ul > li span{
 	color: #29602b;
 	font-weight: 800;
 }
+.Mmenu{
+	position: absolute;
+	width: 161px;
+	border: 1px solid #eee;
+	background-color:#fff;
+	z-index: 100;
+	margin-top: 22px;
+   	display:none; 
+}
+.Mmenu{
+	padding:0;
+}
+.Mmenu li{
+	display:block;
+	width:100%;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	color:#111;
+	cursor:pointer;
+	margin: 30px 0;
+}
+.Mmenu li:hover{
+	color: #29602b;
+	font-weight:800;
+}
+.rList{
+	left: 319px;
+	height: 164px;
+}
+.gList{
+	left: 559px;
+	height: 313px;
+}
+.playList{
+	left: 799px;
+	height: 122px;
+}
 
+/* footer css*/
+.footer{
+	width: 100%;
+	height: 225px;
+	background-color:#eee;
+	color: #0d0d0d;
+	padding:23px 0;
+}
+.footer .footerMenu{
+	font-size: 17px;
+	font-weight: bold;
+	line-height:1.78;
+}
+.footer .footerMenu p{
+	display:inline-block;
+}
+.footer .footerMenu p a{
+	cursor:pointer;
+}
+.footer .footerMenu p span{
+	padding: 0 15px;
+}
+.footer .footerText{
+	font-size:16px;
+	line-height:1.69;
+	margin-top:30px;
+}
+.footer .footerText span{
+	margin:0 20px;
+}
+.footer .footerLogo{
+	float:right;
+	width:244px;
+	height:56px;
+	margin-top:-60px;
+	background-image: url(../../static/img/MusicTree_Logo_big@2x.png);
+	background-size:contain;
+}
+
+
+/* index css */
 .content{
 	width: 1280px;
 	margin:0 auto;
 }
 .content .musicBox{
 	margin-top:55px;
+	cursor:pointer;
 }
 .content .c_title{
 	font-size:24px;
@@ -99,30 +210,479 @@ body{
 .content .musicBox .slideBox{
 	width:100%;
 	margin-top:27px;
+	height: 340px;
 }
 .content .musicBox .slideBox .music_item{
-	width: 300px;
+	position: relative;
+	display:inline-block;
+	width: 300px !important;
 	height: 300px;
+	margin: 0 10px;
 }
 .content .musicBox .slideBox .music_item img{
 	width:300px;
 	height:300px;
 }
 .content .musicBox .slideBox .music_item .musicInfo{
+	position: absolute;
+	bottom: 0;
 	width:300px;
 	height:72px;
+	padding: 14px 17px;
 	background-color:rgba(58,58,58,0.8);
 }
 .content .musicBox .slideBox .music_item .musicInfo .m_title{
 	font-size:16px;
 	color:#dedede;
+	margin-bottom:10px;
 }
 .content .musicBox .slideBox .music_item .musicInfo .name{
 	font-size:16px;
 	color:#bebebe;
 }
 .content .musicBox .slideBox .music_item .musicInfo .playBtn{
+	position:absolute;
+	bottom: 14px;
+	right:17px;
 	width:20px;
 	height:20px;
 	float:right;
+}
+.slick-dots li button::before{
+	width:16px;
+	height:16px;
+	color:transparent;
+	border:1px solid #29602b;
+	border-radius:50%;
+	content: '';
+	opacity:1;
+}
+.slick-dots li.slick-active{
+	width:26px;
+}
+.slick-dots li.slick-active button::before{
+	width:26px;
+	background-color:#29602b;
+	border-radius: 8px;
+	opacity:1;
+}
+.slick-arrow::before{
+	color:transparent;
+}
+.slick-arrow{
+	width: 62px;
+	height: 62px;
+	top: calc(50% - 31px);
+}
+.slick-next{
+	background-image: url('../../static/img/btn_right.png') !important;
+	right: -80px;
+}
+.slick-prev{
+	background-image: url('../../static/img/btn_left.png') !important;
+	left: -80px;
+}
+.content .banner{
+	width: 1280px;
+	margin:136px 0;
+	overflow-x: hidden;
+	position:relative;
+}
+.content .banner .bannerItem{
+	width:1280px;
+	height:225px;
+	background-color:#d1e1d2;
+	border: 1px solid #000;
+}
+.swiper-pagination{
+	width:70px;
+}
+.swiper-pagination-bullet{
+	width:14px;
+	height:14px;
+	border: 2px solid #29602b;
+	background-color:transparent;
+	opacity: 1;
+}
+.swiper-pagination-bullet-active{
+	background-color:#29602b;
+}
+.content .chartBox{
+	display:flex;
+	justify-content:space-between;
+	margin-bottom: 145px;
+}
+.content .chartBox .Ctitle, .content .videoChart .Ctitle{
+	font-size:24px;
+	font-weight: bold;
+	color: #111;
+	border-bottom: 3px solid #000;
+	padding: 0 6px 12px;
+}
+.content .chartBox .moreBtn, .content .videoChart .moreBtn{
+	float:right;
+	font-size:16px;
+	color:#777;
+	margin-top: 3px;
+	cursor:pointer;
+}
+.content .chartBox .musicTitle{
+	font-size: 16px;
+	color: #000;
+}
+.content .chartBox .moreBtn img, .content .videoChart .moreBtn img{
+	width:9px;
+	height:13px;
+}
+.content .chartBox .playBtn{
+	width:20px;
+	height:20px;
+	cursor:pointer;
+}
+.content .chartBox .musicChart{
+	width:750px;
+}
+.content .chartBox .musicChart .chartList .listItem{
+	display:grid;
+	grid-template-columns: 1fr 10fr 5fr 1fr;
+	border-bottom: 1px solid #eee;
+	padding:17px 0;
+}
+.content .chartBox .musicChart .chartList .listItem .rank{
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+}
+.content .chartBox .musicChart .chartList .listItem .musicTitle{
+	margin-top:2px;
+}
+.content .chartBox .musicChart .chartList .listItem .singer{
+	font-size:16px;
+	color:#929292;
+	margin-top:2px;
+}
+.content .chartBox .albumChart{
+	width: 450px;
+}
+.content .chartBox .albumChart .chartlist .listItem{
+	padding: 15px 10px;
+	border-bottom: 1px solid #eee;
+	height: 194px;
+}
+.content .chartBox .albumChart .chartlist .listItem .albumImg{
+	width: 160px;
+	height:160px;
+	float:left;
+	margin-right:21px;
+}
+.content .chartBox .albumChart .chartlist .listItem .albumImg img{
+	width: 160px;
+	height: 160px;
+}
+.content .chartBox .albumChart .chartlist .listItem .albumInfo{
+	float: left;
+	margin-top: 42px;
+}
+.content .chartBox .albumChart .chartlist .listItem .singer{
+	font-size:14px;
+	color:#929292;
+	margin: 20px 0 44px;
+}
+.content .videoChart{
+	width: 100%;
+	margin-bottom:150px;
+}
+.content .videoChart .chartList{
+	display:flex;
+	justify-content: space-evenly;
+	margin-top:25px;
+}
+.content .videoChart .chartList .listItem{
+	display: inline-block;
+	width: 300px;
+	height:192px;
+}
+.content .videoChart .chartList .listItem iframe{
+	width: 300px;
+	height:192px;
+}
+.content .bottomMenu{
+	font-family: 'Noto Sans KR';
+	border-top:1px solid #eee;
+	padding-top:32px;
+	margin-bottom:40px;
+	display:flex;
+	justify-content:space-between;
+}
+.content .bottomMenu .notice{
+	width:715px;
+}
+.content .bottomMenu .notice .title{
+	font-size:16px;
+	font-weight:500;
+	margin-bottom:20px;
+}
+.content .bottomMenu .notice .title .moreBtn{
+	float:right;
+	font-size:14px;
+	font-weight:400;
+}
+.content .bottomMenu .notice .title .moreBtn img{
+	width:9px;
+	height:9px;
+}
+.content .bottomMenu .notice .noticeList .listItem{
+	border-bottom: 1px solid #eee;
+	padding: 11px 0;
+	font-size: 14px;
+	color: #777;
+	display:flex;
+	justify-content: space-between;
+	cursor:pointer;
+}
+.content .bottomMenu .custmerCenter{
+	margin: 2px 70px 0 0;
+}
+.content .bottomMenu .custmerCenter .ccTitle{
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:4px;
+}
+.content .bottomMenu .custmerCenter .cNum{
+	font-size:30px;
+	font-weight:bold;
+	color:#29602b;
+	margin-bottom:11px;
+}
+.content .bottomMenu .custmerCenter .cInfo{
+	font-size:14px;
+	color:#707070;
+	margin-bottom:4px;
+	line-height:1.5;
+}
+
+
+
+
+
+
+/*musicChart CSS*/
+.Mcontent{
+	width: 1280px;
+	margin: 0 auto;
+	padding: 40px 0 150px;
+}
+
+.Mcontent .title{
+	font-size:24px;
+	color: #111;
+	line-height: 0.9;
+	font-weight: bold;	
+}
+
+.Mcontent .date{
+	text-align:center;
+	font-size:20px;
+}
+.Mcontent .date span{
+	color:#29602b;
+	font-size:20px;
+	font-weight:bold;
+}
+.Mcontent .btns{
+	text-align:right;
+	margin-top:10px;
+}
+.Mcontent .btns img{
+	height:30px;
+	cursor:pointer;
+}
+.Mcontent .musicChart {
+	margin-top : 20px;
+}
+.Mcontent  .musicChart .chartTop{
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 15px 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 15fr 1fr 1fr;
+}
+.Mcontent .musicChart .chartTop div{
+	font-size:16px;
+	text-align: center;
+	color: #000;
+}
+.Mcontent .musicChart .chartList {
+	display:table; 
+	table-layout:fixed;
+	width:100%;
+}
+.Mcontent .musicChart .chartList .listItem{
+	padding: 10px 0;
+	display: table-row;
+	height:80px;
+}
+.Mcontent .musicChart .chartList .listItem div{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	width:67px;
+	border-bottom:1px solid #eee;
+}
+
+.Mcontent .musicChart .chartList .listItem .rank{
+	font-size:20px;
+	font-weight:bold;
+}
+.Mcontent .musicChart .chartList .listItem .musicCover{
+	width:60px;
+	height:60px
+}
+.Mcontent .musicChart .chartList .listItem .title{
+	font-size:16px;
+	width:350px;
+	text-align:left;
+	white-space: nowrap;
+ 	overflow: hidden;
+  	text-overflow: ellipsis;
+	padding-right:10px;
+}
+.Mcontent .musicChart .chartList .listItem .singer{
+	font-size:16px;
+	color: #929292;
+	width: 500px;
+	text-align:left;
+}
+.Mcontent .musicChart .chartList .listItem .playBtn, .Mcontent .musicChart .chartList .listItem .addBtn{
+	width:20px;
+	height:20px;
+	cursor:pointer;
+}
+.Mcontent .loading{
+	display:block;
+	width:150px;
+	height:150px;
+	margin:50px auto;
+}
+
+.Mcontent .position{
+	color: #838383;
+	font-size: 14px;
+	margin-bottom: 50px;
+}
+
+
+
+.Mcontent .albumChart{
+	margin-top: 100px;
+}
+.Mcontent .albumChart .chartlist .listItem{
+	width:600px;
+	height:160px;
+	border:1px solid #eee;
+	display:inline-block;
+	margin: 0 70px 20px 0;
+}
+.Mcontent .albumChart .chartlist .listItem:nth-child(2n -1){
+	margin-right:0;
+}
+.Mcontent .albumChart .chartlist .listItem .albumImg{
+	width:160px;
+	height:160px;
+	float:left;
+	margin-right:21px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumImg img{
+	width:160px;
+	height:160px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo{
+	float:left;
+	padding-top:22px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo .musicTitle{
+	font-size:16px;
+	margin-bottom:16px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo .singer{
+	font-size:14px;
+	color:#929292;
+	margin-bottom:30px;
+}
+.Mcontent .albumChart .chartlist .listItem .albumInfo .playBtn{
+	font-size:20px;
+	margin-bottom:20px;
+}
+
+.Mcontent .videoChart{
+	margin-top:100px;
+}
+.Mcontent .videoChart .chartlist .listItem {
+	display: inline-block;
+	width:400px;
+	height: 225px;
+	margin-right:21px;
+}
+.Mcontent .videoChart .chartlist .listItem:nth-child(3n){
+	margin-right:0px;
+}
+.Mcontent .videoChart .chartlist .listItem iframe{
+	width:400px;
+	height:225px;
+}
+
+
+.pContent{
+	width:1280px;
+	margin:0 auto;
+	padding: 40px 0 150px;
+}
+.pContent .title{
+	font-size: 24px;
+	color: #111;
+	line-height: 0.9;
+	font-weight: bold;
+	text-align:center;
+}
+
+.pContent .playChart{
+	width:1080px;
+	margin:100px auto;
+}
+.pContent .playChart .chartlist .listItem{
+	width: 250px;
+	border: 1px solid #eee;
+	display: inline-block;
+	margin: 0 22px 40px 0;
+}
+.pContent .playChart .chartlist .listItem:nth-child(4n){
+	margin-right:0;
+}
+.pContent .playChart .chartlist .listItem img{
+	width: 250px;
+	height: 250px;
+}
+.pContent .playChart .chartlist .listItem .infoBox{
+	width: 250px;
+	height: 80px;
+	padding: 20px 15px;
+	position: relative;
+}
+.pContent .playChart .chartlist .listItem .infoBox .title{
+	font-size: 16px;
+	font-weight: 500;
+	text-align:left;
+	margin-bottom:10px;
+}
+.pContent .playChart .chartlist .listItem .infoBox .count{
+	font-size: 14px;
+	color: #4d4d4d;
+}
+.pContent .playChart .chartlist .listItem .infoBox .playBtn{
+	width :20px;
+	height: 20px;
+	position: absolute;
+	bottom:20px;
+	right: 15px;
+	cursor:pointer;
 }

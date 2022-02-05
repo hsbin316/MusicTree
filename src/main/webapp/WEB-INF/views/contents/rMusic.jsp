@@ -56,6 +56,16 @@
 				})
 			})
 			
+			$(".btns img").on('mouseout', function(){
+				var index = $(".btns img").index(this);
+				
+				$(".btns img").eq(index).attr("src",function(index, attr){
+					if(attr.match('_on')){
+						return attr.replace('_on','_off');
+					}		
+				})
+			})
+			
 			$(function(){
 				if($(".allCheck").is(':checked')){
 					$(".listcheck").prop('checked',true);

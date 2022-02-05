@@ -144,7 +144,7 @@
 			<!-- 인기앨범  -->
 			<div class="albumChart">
 				<div class="Ctitle">
-					인기 앨범
+					최신 앨범
 					<div class="moreBtn">
 						더보기
 						<img src="${path }/static/img/arrow_right@2x.png" />

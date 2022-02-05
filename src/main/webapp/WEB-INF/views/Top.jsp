@@ -2,9 +2,15 @@
     pageEncoding="UTF-8"%>
 
 <div class="topMenu">
+<<<<<<< HEAD
+	<div onclick="location.href='/login'">로그인</div>
+	<div>|</div>
+	<div onclick="location.href='/register'">회원가입</div>
+=======
 	<div>로그인</div>
 	<div>|</div>
 	<div>회원가입</div>
+>>>>>>> master
 	<div>|</div>
 	<div>마이페이지</div>
 </div>
@@ -13,7 +19,11 @@
 	
 <div class="Top">
 	<div class="logo">
+<<<<<<< HEAD
+		<img src="${path}/static/img/MusicTree_logo@2x.png" onclick="location.href='/';"  alt="logo"/>
+=======
 		<img src="${path}/static/img/MusicTree_logo@2x.png" alt="logo"/>
+>>>>>>> master
 	</div>
 	<div class="searchBox">
 		<input type="text" class="searchInput" />
@@ -37,19 +47,33 @@
 		<li class="genre">
 			장르
 			<ul class="Mmenu gList">
+<<<<<<< HEAD
+				<li onclick="location.href='/genre/ballad'">발라드</li>
+				<li onclick="location.href='/genre/rbsoul'">R&B/Soul</li>
+				<li onclick="location.href='/genre/dance'">댄스</li>
+				<li onclick="location.href='/genre/rap'">랩/힙합</li>
+				<li onclick="location.href='/genre/indie'">인디음악</li>
+				<li onclick="location.href='/genre/pop'">POP</li>
+=======
 				<li>발라드</li>
 				<li>R&B/Soul</li>
 				<li>댄스</li>
 				<li>랩/힙합</li>
 				<li>인디음악</li>
 				<li>POP</li>
+>>>>>>> master
 			</ul>
 		</li>
 		<li class="playlist">
 			플레이리스트
 			<ul class="Mmenu playList">
+<<<<<<< HEAD
+				<li onclick="location.href='/playlist/pplaylist'">인기 플레이리스트</li>
+				<li onclick="location.href='/playlist/rplaylist'">최신 플레이리스트</li>
+=======
 				<li>인기 플레이리스트</li>
 				<li>최신 플레이리스트</li>
+>>>>>>> master
 			</ul>
 		</li>
 		<li>아티스트</li>
